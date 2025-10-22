@@ -1,6 +1,10 @@
 
-import Map from './Map';
+'use client';
+
+import dynamic from 'next/dynamic';
 import { ArrowLeft, Footprints, Map as MapIcon, Clock, Flame } from 'lucide-react';
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const RunningTracker = () => {
   return (
@@ -39,18 +43,18 @@ const RunningTracker = () => {
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="bg-purple-100 p-4 rounded-2xl">
               <MapIcon className="mx-auto text-purple-500" />
-              <p className="font-bold mt-1">2.03</p>
-              <p className="text-sm text-gray-500">Kilometer</p>
+              <p className="font-bold mt-1 text-black">2.03</p>
+              <p className="text-sm text-gray-600">Kilometer</p>
             </div>
             <div className="bg-blue-100 p-4 rounded-2xl">
               <Clock className="mx-auto text-blue-500" />
-              <p className="font-bold mt-1">15</p>
-              <p className="text-sm text-gray-500">minutes</p>
+              <p className="font-bold mt-1 text-black">15</p>
+              <p className="text-sm text-gray-600">minutes</p>
             </div>
             <div className="bg-yellow-100 p-4 rounded-2xl">
               <Flame className="mx-auto text-yellow-500" />
-              <p className="font-bold mt-1">75</p>
-              <p className="text-sm text-gray-500">Calories</p>
+              <p className="font-bold mt-1 text-black">75</p>
+              <p className="text-sm text-gray-600">Calories</p>
             </div>
           </div>
         </div>
